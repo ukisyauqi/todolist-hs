@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="flex min-h-screen flex-col items-center md:p-24 p-4">
+      <img
+        src="../assets/bg-desktop-light.jpg"
+        alt="bg"
+        class="h-96 -z-10 absolute top-0 min-h-96 object-cover w-full"
+      />
+        <section class="max-w-[700px] mx-auto container">
+          <div class="flex justify-between items-center">
+            <h1 class="text-[3rem] text-white font-bold tracking-[1rem]">
+              TODO
+            </h1>
+            <div class="group">
+              <p class="text-3xl bg-white rounded-full size-10">🙍</p>
+              <div
+                class="hidden group-hover:block bg-white rounded absolute p-2 shadow-lg"
+              >
+                <p>Muhamad Syauqi Fadhlika</p>
+                <p>Fullstack Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <form
+            id="formTodo"
+            class="flex items-center rounded-lg bg-white gap-4 mt-6 px-4"
+          >
+            <label for="priority">priority:</label>
+            <select id="priority" class="w-10 -ml-4">
+              <option value="🟢">🟢 low</option>
+              <option value="🟡">🟡 medium</option>
+              <option value="🔴">🔴 high</option>
+            </select>
+            <input id="content" type="text" class="w-full p-4 border-x" />
+            <input
+              type="submit"
+              class="bg-purple-500 rounded px-3 py-1 text-white cursor-pointer hover:bg-purple-400"
+            />
+          </form>
+
+          <div class="mt-4 rounded-lg bg-white shadow-lg">
+            <div class="flex justify-between items-center p-4 text-gray-400">
+              <div class="flex gap-6">
+                <button class="btn text-black" onclick="showAllTodos()">
+                  Show All
+                </button>
+                <button class="btn" onclick="showCompletedTodos()">Done</button>
+              </div>
+              <button onclick="deleteAllTodos()" class="hover:text-black">
+                Delete All
+              </button>
+            </div>
+
+            <div id="todoComponents"></div>
+          </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
